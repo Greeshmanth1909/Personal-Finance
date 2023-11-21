@@ -1,0 +1,12 @@
+{
+  "name": "personal-finance",
+  "productName": "Personal Finance",
+  "version": "1.0.0",
+  "description": "A local first personal finance manager",
+  "scripts": {
+    "start": "electron ."
+  },
+  "main": "main.js",
+  "author": "Greeshmanth",
+  "license": "MIT"
+}
