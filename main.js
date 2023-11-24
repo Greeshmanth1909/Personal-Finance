@@ -1,7 +1,9 @@
 var path = require("path")
 const { app, BrowserWindow} = require("electron");
+const { isDataView } = require("util/types");
 
 const isMac = process.platform === "darwin";
+const isDev = process.env.NODE_ENV  !== 'production';
 
 // Instantiate a new browser window
 
@@ -11,6 +13,10 @@ function CreateBrowserWindow() {
         height: 600,
         width: 900
     })
+    // open dev toold if in dev env
+    if (isDev) {
+        mainWindow.webContents.openDevTools();
+    }
     mainWindow.loadFile(path.join(__dirname, './renderer/index.html'));
 }
 
